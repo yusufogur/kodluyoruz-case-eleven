@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project JS</title>
+
+	<!--bootstrap-css-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+	<style type="text/css">
+		
+	</style>
+</head>
+<body class="text-center bg-dark container text-white p-5">
+	<main>
+		<img src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png">
+		<p class="text-warning" id="user"></p>
+		<div class="row justify-content-center">
+			<div class="text-warning col-12 bg-transparent">
+				<p id="testTime"></p>
+			</div>
+			<div class="text-warning col-12">
+				<p>Kodluyoruz <strong>Frontend Web Developmen Patikası'ın</strong> Javascript bölümü 1. ödevindesiniz</p>
+			</div>
+		</div>
+	</main>
+
+	<script type="text/javascript">
+		let user = prompt("Lütfen adınızı giriniz!", "Ryan Black")
+		document.getElementById("user").innerHTML = "Merhaba " + user + " Hoşgeldiniz";
+
+		function getNowDate() {
+			let date = new Date();
+			let days = new Array("Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi");
+			let hour = date.getHours();
+			let minute = date.getMinutes();
+			let second = date.getSeconds();
+
+			let dayNumber = date.getDay();
+
+			let time = hour + ":" + minute + ":" + second;
+
+			document.getElementById("testTime").innerHTML = time + " " + days[dayNumber];
+
+		}
+		
+		setInterval(function() {getNowDate(); },1000);
+
+	</script>
+</body>
+</html>
